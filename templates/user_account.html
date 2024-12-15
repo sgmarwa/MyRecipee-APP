@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../static/account.css">
+</head>
+<body>
+    <div class="profile-container">
+       <div class="profile-header">
+            <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+        </div>
+
+        <!-- Personal Info Section -->
+        <div class="profile-info">
+            <h2>Personal Information</h2>
+            <form id="personal-info-form" class="info-box">
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" value="{{ user.first_name }}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" value="{{ user.last_name }}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="{{ user.email }}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="password">New Password:</label>
+                    <input type="password" id="password" placeholder="Enter new password" disabled>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="edit-button">Edit</button>
+                    <button type="submit" id="save-button" style="display: none;">Save</button>
+                </div>
+            </form>
+        </div>
+
+         <!-- Recipes Section -->
+         <div class="recipes-section">
+            <h2>Your Shared Recipes</h2>
+            <div class="recipes-grid">
+                {% for recipe in recipes %}
+                <div class="recipe" data-recipe-id="{{ recipe.recipe_id }}">
+                    <img src="{{ recipe.image_url }}" alt="{{ recipe.name_recipe }}">
+                    <div class="recipe-hover">
+                        <span>{{ recipe.name_recipe }}</span>
+                        <button class="delete-recipe">Delete</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="../static/script1.js" ></script>
+</body>
+</html>

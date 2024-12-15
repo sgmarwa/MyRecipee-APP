@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.name }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/recet.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1> {{ recipe.name_recipe }}</h1>
+        <img src="{{ recipe['image_url'] }}" alt="Recipe Image" class="card__img">
+        <!-- <p><strong>Auteur :</strong> {{ recipe.author }}</p> -->
+    
+        <p><strong>Ingrédients :</strong></p>
+         
+            <li>{{ recipe.ingredients }}</li>
+         
+        <p><strong>Instructions :</strong></p>
+        
+            <li>{{ recipe.instructions }}</li>
+         
+        <p><strong>Nombre de likes :</strong> {{ recipe.nb_likes }}</p>
+    </div>
+    
+
+    <div class="footer">
+        <p>Recette issue de notre collection | <a href="/">Retour à l'accueil</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
