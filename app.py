@@ -41,9 +41,9 @@ CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*", "methods
 def get_db_connection():
     try:
         return mysql.connector.connect(
-            host='dbprojectserver.cnoegm6cssqo.us-east-1.rds.amazonaws.com',
+            host='',
             user='admin',
-            password='Marwa123',
+            password='',
             database='recette'
         )
     except mysql.connector.Error as err:
